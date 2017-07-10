@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cars Index</title>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+	<% if(typeof(errors) != 'undefined' ) { %>
+	     <% for (var x in errors) { %>
+	      <p class="error"><%= errors[x].message %></p>
+	     <% } %>
+	 <% } %>
+
+	<h2>Create a New Car!</h2>
+	<form action="/cars/<%= car._id %>" method="POST">
+		<p>Make <input type="text" name="make" value="<%= car.make %>"></p>
+		<p>Model <input type="text" name="model" value="<%= car.model %>"></p>
+		<p>Year <input type="text" name="year" value="<%= car.year %>"></p>
+		<p>Image <input type="text" name="image" value="<%= car.image %>"></p>
+		<input type="submit" value="Update Car">
+	</form>
+	<a href="/">Return to Home Page</a>
+</body>
+</html>

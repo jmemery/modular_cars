@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cars Index</title>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+		<div>
+			<h3><%= car.make %> <%= car.model %></h3>
+			<p>Year: <%= car.year %></p>
+			<% if(car.image){ %>
+				<img class="image" src="<%= car.image %>">
+			<%}%>
+		</div>
+	<a href="/">Home</a>
+</body>
+</html>

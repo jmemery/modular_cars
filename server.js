@@ -18,15 +18,8 @@ app.set('view engine', 'ejs');
 
 mongoose.connect('mongodb://localhost/car_dashboard')
 
-let CarSchema = new mongoose.Schema({
-	year: {type: String, required:true},
-	make: {type:String, required: true},
-	model: {type: String, required: true},
-	image: {type:String}
-}, {timestamps:true});
-
-mongoose.model('Car', CarSchema);
-
+require('./server/config/mongoose.js');
 require('./server/config/routes.js')(app);
 
-app.listen(1234, () => console.log("Listening on port 1234"));
+
+app.listen(1235, () => console.log("Listening on port 1235"));
